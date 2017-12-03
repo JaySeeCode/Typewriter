@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Typewriter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Virtual Typewriter Experience</h1>
+  <div id="text-area"></div>
+
+  <script>
+    var keystroke = new Audio('tw-keystroke (mp3cut.net).mp3');
+    var backspace = new Audio('tw-backspace (mp3cut.net).mp3');
+    var textarea = document.getElementById('text-area');
+   
+    // Use this event to capture keys that produce an acceptable character value
+    document.addEventListener('keypress', (event) => {
+      let key = event.key;
+      setTimeout(function() {
+        keystroke.play();
+        textarea.innerHTML += key;
+      }, 250)
+    });
+
+    // Use this event to trigger backspace functionality
+    document.addEventListener('keydown', (event) => {
+      // Key code 8 is Backspace
+      let key = event.keyCode === 8 ? event.keyCode : null;
+      if (key !== null) {
+        backspace.play();
+        // Remove last character from string
+        setTimeout(function() {
+          let innerTextMinusLast = textarea.innerHTML.slice(0, -1);
+          // Replace content with edited text
+          textarea.innerHTML = innerTextMinusLast;
+        }, 285);
+      }
+    });
+    
+  </script>
+  
+</body>
+</html>

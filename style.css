@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('https://static.pexels.com/photos/301378/pexels-photo-301378.jpeg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  z-index: -1;
+  font-family: Courier New, Courier, monospace;
+}
+
+h1 {
+  color: #eee;
+  text-align: center;
+  text-shadow: 3px 3px #000;
+}
+
+#text-area {
+  background-image: url('https://static.pexels.com/photos/242236/pexels-photo-242236.jpeg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  width: 70%;  /*60em*/
+  height: 80%; /* 600px */
+  /* background: #fff; */
+  position: absolute;
+  top: 35px; bottom: 0; left: 0; right: 0;
+  margin: auto;
+  padding: 15px 20px;
+  text-align: justify;
+  font-weight: bold;
+}
+
+@media(max-width: 700px) {
+  h1 {
+    width: 100%;
+    font-size: 22px;
+    padding: 3px;
+    margin-bottom: 10px;
+  }
+  /* #textarea {
+    top: 35px; bottom: 0; left: 0; right: 0;
+  } */
+}
